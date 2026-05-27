@@ -1,4 +1,4 @@
-﻿using RecipesDataAccess.Models;
+﻿using Domain.Entities;
 
 namespace RecipeStudioUI.ViewModels
 {

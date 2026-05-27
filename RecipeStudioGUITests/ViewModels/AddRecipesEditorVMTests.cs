@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using Domain.Entities;
 using NUnit.Framework.Internal;
-using RecipesDataAccess.Models;
+
 using RecipeStudioUI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

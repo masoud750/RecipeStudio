@@ -1,4 +1,4 @@
-﻿using RecipesDataAccess.Models;
+﻿using Domain.Entities;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 

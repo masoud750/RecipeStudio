@@ -1,17 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
 using RecipeStudioUI.Services;
 using RecipeStudioUI.UserCtrls;
 using RecipeStudioUI.ViewModels;
-using System.Configuration;
-using System.Data;
 using System.IO;
 using System.Windows;
 

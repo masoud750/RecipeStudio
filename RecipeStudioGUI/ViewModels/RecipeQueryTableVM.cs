@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipeStudioUI.Commands;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;

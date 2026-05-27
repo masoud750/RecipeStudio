@@ -1,18 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipeStudioUI.Commands;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
-using RecipeStudioUI.UserCtrls;
 using RecipeStudioUI.Views;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 

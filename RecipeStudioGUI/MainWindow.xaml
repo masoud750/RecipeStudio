@@ -9,7 +9,7 @@
         xmlns:uc="clr-namespace:RecipeStudioUI.UserCtrls" 
         d:DataContext="{d:DesignInstance Type=vm:MainVM}"
         mc:Ignorable="d"
-        Title="Database Client" Height="450" Width="800"
+        Title="Recipe Studio" Height="450" Width="800"
          Loaded="Window_Loaded"
         >
 

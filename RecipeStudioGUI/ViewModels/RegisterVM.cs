@@ -1,17 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Models;
 using RecipeStudioUI.Commands;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
-
-using RecipeStudioUI.Views;
-using SQLitePCL;
-using System.CodeDom.Compiler;
 using System.Net.Mail;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
+using Domain.Entities;
 
 namespace RecipeStudioUI.ViewModels
 {

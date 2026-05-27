@@ -1,4 +1,4 @@
-﻿using RecipesDataAccess.Models;
+﻿using Domain.Entities;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
 using RecipeStudioUI.ViewModels;

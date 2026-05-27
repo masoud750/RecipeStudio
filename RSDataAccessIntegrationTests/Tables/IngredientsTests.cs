@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

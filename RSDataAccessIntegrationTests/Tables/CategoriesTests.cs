@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipesDataAccess.Data;
 using System;
 using System.Collections.Generic;

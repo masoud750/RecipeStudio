@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Domain.Tests/Domain.Tests.csproj" Id="c8a99a19-fc4d-49f8-98a4-8236bddb9db1" />
+  <Project Path="Domain/Domain.csproj" Id="72cbbf84-af9b-4e68-94a7-e020759bf2b7" />
   <Project Path="RecipeStudioDataAccess/RecipesDataAccess.csproj" />
   <Project Path="RecipeStudioGUI/RecipeStudioUI.csproj" />
   <Project Path="RecipeStudioGUITests/RecipeStudioUI.Tests.csproj" />

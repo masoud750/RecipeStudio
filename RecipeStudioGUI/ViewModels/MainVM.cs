@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipeStudioUI.Commands;
 using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
 using RecipeStudioUI.Services;
 using RecipeStudioUI.UserCtrls;
 using RecipeStudioUI.Views;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
 

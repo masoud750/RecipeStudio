@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
-
+using Domain.Entities;
 
 namespace RecipeStudioUI.Repositories
 {

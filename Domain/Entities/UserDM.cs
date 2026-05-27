@@ -1,12 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RecipesDataAccess.Models
+
+namespace Domain.Entities
 {
     public class UserDM: EntityBase
     {

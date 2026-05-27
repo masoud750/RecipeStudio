@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipeStudioUI.Repositories;
-using RecipeStudioUI.ViewModels;
-using System;
+
 
 namespace RecipesGUI
 {

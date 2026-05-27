@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NuGet.Frameworks;
 using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
+using Domain.Entities;
 using RecipeStudioUI.Repositories;
 using RecipeStudioUI.Tests.Helpers;
 using System;

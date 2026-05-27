@@ -1,11 +1,7 @@
-﻿
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
+﻿using RecipeStudioUI.Helpers;
 using RecipeStudioUI.Repositories;
-using RecipeStudioUI.ViewModels;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
+using Domain.Entities;
 
 namespace RecipeStudioUI.ViewModels
 {

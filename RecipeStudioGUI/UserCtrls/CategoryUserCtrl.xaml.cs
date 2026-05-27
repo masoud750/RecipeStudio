@@ -1,20 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipeStudioUI.ViewModels;
 using RecipeStudioUI.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Domain.Entities;
+
 
 namespace RecipeStudioUI.UserCtrls
 {
@@ -128,7 +119,7 @@ namespace RecipeStudioUI.UserCtrls
             var categoryTbl = menuItem?.DataContext as CategoryTableVM;
             if (categoryTbl != null)
             {
-                var newCategory = new CategoryVM(new RecipesDataAccess.Models.CategoryDM()
+                var newCategory = new CategoryVM(new CategoryDM()
                 {
                     Name = string.Empty
                 });
