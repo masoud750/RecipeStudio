@@ -1,0 +1,56 @@
+﻿<Window x:Class="RecipeStudioUI.Views.EditRecipeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipeStudioUI.Views"
+        mc:Ignorable="d"
+        Title="EditRecipeView" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Name -->
+        <Label Grid.Row="0" Grid.Column="0" Content="Name:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Margin="5"/>
+
+        <!-- Category -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Category:" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Categories}" 
+                  SelectedItem="{Binding SelectedCategory}" Margin="5"/>
+
+        <!-- Ingredient -->
+        <Label Grid.Row="2" Grid.Column="0" Content="Ingredient:" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Ingredients}" 
+                  SelectedItem="{Binding SelectedIngredient}" Margin="5"/>
+
+        <!-- Step -->
+        <Label Grid.Row="3" Grid.Column="0" Content="Step:" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Steps}" 
+                  SelectedItem="{Binding SelectedStep}" Margin="5"/>
+
+        <!-- Description -->
+        <Label Grid.Row="4" Grid.Column="0" Content="Description:" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Description}" 
+                 AcceptsReturn="True" TextWrapping="Wrap" Margin="5" Height="100"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Right" Margin="5">
+            <Button Content="OK" Width="75" Margin="5" IsDefault="True"/>
+            <Button Content="Cancel" Width="75" Margin="5" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+
+
+</Window>

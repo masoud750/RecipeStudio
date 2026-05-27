@@ -1,0 +1,10 @@
+	Add to test project file:
+	<ItemGroup>
+		<PackageReference Include="coverlet.collector" Version="3.2.0" />
+	</ItemGroup>
+    // dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput="./coverage.xml"
+	execute command: C:\dev\RecipesManager\RecipesGUITests>dotnet test RecipesUI.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura   // not for wpf!
+	execute command: dotnet test --collect:"XPlat Code Coverage" // for wpf project inside the test project directory
+
+	Create report:
+	reportgenerator -reports:"TestResults/0aaa685f-a6b3-46d8-809a-63d465e5c00f/coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html

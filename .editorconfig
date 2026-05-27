@@ -1,0 +1,9 @@
+# All files
+[*]
+guidelines = 80
+
+[*]
+# Named color format
+
+# ARGB color format (red with 25% opacity)
+guidelines_style = 1.5px dash 408080

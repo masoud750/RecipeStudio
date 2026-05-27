@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="RecipeStudioDataAccess/RecipesDataAccess.csproj" />
+  <Project Path="RecipeStudioGUI/RecipeStudioUI.csproj" />
+  <Project Path="RecipeStudioGUITests/RecipeStudioUI.Tests.csproj" />
+  <Project Path="RSDataAccessIntegrationTests/RecipesDataAccessIntegrationTests.csproj" />
+</Solution>

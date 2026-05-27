@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="RecipeStudioUI.UserCtrls.RecipeUserCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipeStudioUI.UserCtrls"
+               xmlns:conv="clr-namespace:RecipeStudioUI.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <conv:BoolToBrushConverter x:Key="BoolToBrushConverter"
+                             TrueBrush="Red"
+                             FalseBrush="Black"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Add Recipe" Width="80" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                    Margin="5" Command="{Binding  ShowAddRecipeDialogCmd}"/>
+        <ListView Grid.Row="1"  ItemsSource="{Binding Recipes}" x:Name="ListView" SelectedItem="{Binding CurrentSelectedItem, Mode=TwoWay}">
+
+
+            <!-- Attach ContextMenu directly to the ListView -->
+            <ListView.ContextMenu>
+                <ContextMenu  StaysOpen="true" Background="WhiteSmoke">
+                    <ContextMenu.BitmapEffect>
+                        <BitmapEffectGroup/>
+                    </ContextMenu.BitmapEffect>
+                    <MenuItem Header="Delete"  Click="MenuItemDelete_Click" />
+                    <MenuItem Header="Edit Category"  Click="MenuItemCategoryEditor_Click" />
+                    <MenuItem Header="Add Recipe"  Command="{Binding  ShowAddRecipeDialogCmd}" />
+
+                </ContextMenu>
+            </ListView.ContextMenu>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Recipe By" DisplayMemberBinding="{Binding User.UserName}" />
+
+                    <GridViewColumn Header="Categories">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Categories}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" 
+                                                    Foreground="{Binding IsExpired, 
+                                                Converter={
+                                                StaticResource BoolToBrushConverter}}"          
+                                            />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+                    <GridViewColumn Header="Ingredient">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Ingredients}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Instruction">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Steps}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+
+                    
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+     
+
+    </Grid>
+</UserControl>

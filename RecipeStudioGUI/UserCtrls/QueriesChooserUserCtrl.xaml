@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="RecipeStudioUI.UserCtrls.QueriesChooserUserCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipeStudioUI.UserCtrls"
+             xmlns:viewmodels="clr-namespace:RecipeStudioUI.ViewModels"          
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:RecipeQueryTableVM}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <!-- Abstand -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Leiste 1 -->
+        <Border Grid.Row="0"  BorderBrush="Gray" BorderThickness="2" CornerRadius="4" Margin="5">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- TextBlock -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- ComboBox stretches -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Button -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Left label -->
+                <TextBlock Text="User:" VerticalAlignment="Center" Grid.Column="0" Margin="5"/>
+
+                <!-- Middle ComboBox stretches -->
+                <ComboBox Grid.Column="1" Margin="5"
+                           SelectedIndex="{Binding CurrentSelectedUserIndex}" 
+                          
+                  ItemsSource="{Binding Users}" />
+
+                <!-- Right button -->
+                <Button Grid.Column="2" Content=">>" Margin="5" Padding="5" 
+                        Command="{Binding UserQueryCmd}"
+                />
+            </Grid>
+        </Border>
+
+        <!-- Leiste 2 -->
+        <Border Grid.Row="0" Grid.Column="1"
+            BorderBrush="Gray" BorderThickness="2" CornerRadius="4" Margin="5">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- TextBlock -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- ComboBox stretches -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Button -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Left label -->
+                <TextBlock Text="Category:" VerticalAlignment="Center" Grid.Column="0" Margin="5"/>
+
+                <!-- Middle ComboBox stretches -->
+                <ComboBox Grid.Column="1" Margin="5"
+                          SelectedIndex="{Binding CurrentSelectedCategoryIndex}" 
+                        ItemsSource="{Binding Categories}" 
+                          />
+
+                <!-- Right button -->
+                <Button Grid.Column="2" Content=">>" Margin="5" Padding="5"
+                        Command="{Binding CategoryQueryCmd}"
+         />
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="2"
+             BorderBrush="Gray" BorderThickness="2" CornerRadius="4" Margin="5"
+                 >
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- TextBlock -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- ComboBox stretches -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Button -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Left label -->
+                <TextBlock Text="gredient:" VerticalAlignment="Center" Grid.Column="0" Margin="5"/>
+
+                <!-- Middle ComboBox stretches -->
+                <ComboBox Grid.Column="1" Margin="5"
+                           SelectedIndex="{Binding CurrentSelectedIngredientIndex}"
+                    ItemsSource="{Binding Ingredients}"
+      />
+
+                <!-- Right button -->
+                <Button Grid.Column="2" Content=">>" Margin="5" Padding="5"
+                        Command="{Binding IngredientQueryCmd}"/>
+            </Grid>
+        </Border>
+        <local:QueriesUserCtrl Grid.Row="1" Grid.ColumnSpan="3" />
+    </Grid>
+</UserControl>

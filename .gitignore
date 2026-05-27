@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+# User-specific files
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# NuGet
+*.nupkg
+packages/
+
+
+#local directory
+Debug/
+Release/
+artifacts/
+RecipeStudioGUITests/TestResults/
+coveragereport/
+RSDataAccessIntegrationTests/TestResults/
+RecipeStudioGUITests/obj/
+RecipeStudioGUI/obj/
+
