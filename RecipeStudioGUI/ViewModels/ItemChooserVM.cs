@@ -1,8 +1,8 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
      public class DesignerItemChooser : ItemChooserVM<IngredientVM> 
     {

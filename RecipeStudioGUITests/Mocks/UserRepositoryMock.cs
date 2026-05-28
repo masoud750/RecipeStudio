@@ -1,7 +1,7 @@
-﻿using RecipesDataAccess.Data;
-using RecipeStudioUI.Repositories;
+﻿using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Repository.Presistence;
 using RecipeStudioUI.Tests.Helpers;
-using Domain.Entities;
+using RecipeStudio.Domain.Entities;
 
 namespace RecipeStudioUI.Tests.Mocks
 {

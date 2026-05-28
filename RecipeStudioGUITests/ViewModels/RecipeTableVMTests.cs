@@ -1,5 +1,6 @@
-﻿using RecipesGUI;
-using RecipeStudioUI.Helpers;
+﻿using RecipeStudio.Repository.Presistence;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.ViewModels;
 using RecipeStudioUI.Tests.Helpers;
 
 
@@ -14,7 +15,7 @@ namespace RecipesUI.Tests.ViewModelsTests
         {
             var ex = Assert.Throws<ArgumentNullException>(() =>
             {
-                _ = new RecipeStudioUI.ViewModels.RecipeTableVM(repository: null!, new MessageBoxService());
+                _ = new RecipeTableVM(repository: null!, new MessageBoxService());
             });
             string msg = ex.Message;
             msg = msg.ToLowerInvariant();
@@ -27,7 +28,7 @@ namespace RecipesUI.Tests.ViewModelsTests
             var ex = Assert.Throws<ArgumentNullException>(() =>
             {
                 using var context = TestHelper.GetDbContext();
-                _ = new RecipeStudioUI.ViewModels.RecipeTableVM(new RecipeRepository(context), null!);
+                _ = new RecipeTableVM(new RecipeRepository(context), null!);
             });
             var msg = ex.Message;
             msg = msg.ToLowerInvariant();

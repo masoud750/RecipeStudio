@@ -1,16 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using Domain.Entities;
-using RecipeStudioUI.Commands;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using RecipeStudio.UI.Commands;
 using System.Windows.Input;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class AddRecipeEditorVM: ModelBase
     {

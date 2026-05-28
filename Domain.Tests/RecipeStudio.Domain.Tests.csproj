@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Domain\RecipeStudio.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

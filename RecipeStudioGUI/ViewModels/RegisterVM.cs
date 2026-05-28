@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.UI.Helpers;
 using System.Net.Mail;
 using System.Windows.Input;
-using Domain.Entities;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.Repository.Presistence;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     
     public class RegisterVMDesigner : RegisterVM

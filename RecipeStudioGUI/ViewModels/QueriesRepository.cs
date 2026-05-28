@@ -1,8 +1,9 @@
-﻿using RecipesDataAccess.Data;
-using Domain.Entities;
-using RecipeStudioUI.Repositories;
+﻿
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class RecipeQueriesRepository : IRepository<RecipeDM>
     {

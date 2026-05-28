@@ -1,7 +1,8 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Repositories;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.Repository;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class FakeCategoryRepository : IRepository<CategoryDM>
     {

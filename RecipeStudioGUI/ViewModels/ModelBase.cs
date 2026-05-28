@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class ModelBase : INotifyPropertyChanged
     {
@@ -104,7 +104,7 @@ namespace RecipeStudioUI.ViewModels
     }
 }
 
-namespace RecipeStudioUI.Commands
+namespace RecipeStudio.UI.Commands
 {
     public class RelayCommand : ICommand
     {

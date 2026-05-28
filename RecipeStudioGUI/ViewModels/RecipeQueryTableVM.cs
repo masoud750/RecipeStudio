@@ -1,15 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Windows;
 using System.Windows.Input;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.Repository.Interfaces;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
 
 

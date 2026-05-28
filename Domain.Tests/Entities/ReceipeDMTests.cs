@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using Domain.Entities;
+﻿
+using RecipeStudio.Domain.Entities;
 
 namespace RecipesDataAccessIntegrationTests.Models
 {

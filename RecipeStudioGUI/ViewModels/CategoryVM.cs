@@ -1,9 +1,10 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Commands;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Commands;
+
 using System.Windows.Input;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
 
     public interface IValidatable

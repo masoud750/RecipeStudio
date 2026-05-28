@@ -1,8 +1,9 @@
 <Solution>
-  <Project Path="Domain.Tests/Domain.Tests.csproj" Id="c8a99a19-fc4d-49f8-98a4-8236bddb9db1" />
-  <Project Path="Domain/Domain.csproj" Id="72cbbf84-af9b-4e68-94a7-e020759bf2b7" />
-  <Project Path="RecipeStudioDataAccess/RecipesDataAccess.csproj" />
-  <Project Path="RecipeStudioGUI/RecipeStudioUI.csproj" />
-  <Project Path="RecipeStudioGUITests/RecipeStudioUI.Tests.csproj" />
-  <Project Path="RSDataAccessIntegrationTests/RecipesDataAccessIntegrationTests.csproj" />
+  <Project Path="Domain.Tests/RecipeStudio.Domain.Tests.csproj" />
+  <Project Path="Domain/RecipeStudio.Domain.csproj" />
+  <Project Path="RecipeStudio.Repository.Tests/RecipeStudio.Repository.Tests.csproj" />
+  <Project Path="RecipeStudio.Repository/RecipeStudio.Repository.csproj" />
+  <Project Path="RecipeStudioDataAccess/RecipeStudio.DataAccess.csproj" />
+  <Project Path="RecipeStudioGUI/RecipeStudio.UI.csproj" />
+  <Project Path="RSDataAccessIntegrationTests/RecipeStudio.DataAccess.IntegrationTests.csproj" />
 </Solution>

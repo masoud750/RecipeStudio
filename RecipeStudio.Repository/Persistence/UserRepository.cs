@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
-using Domain.Entities;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Helpers;
+using RecipeStudio.Repository.Interfaces;
 
-
-namespace RecipeStudioUI.Repositories
+namespace RecipeStudio.Repository.Presistence
 {
 
-    internal interface IUserRepository : IRepository<UserDM>
+    public interface IUserRepository : IRepository<UserDM>
     {
         Task AddAsync(string username, string email, string password);
         Task<UserDM?> LogInUserAsync(string username, string password);
@@ -55,7 +56,7 @@ namespace RecipeStudioUI.Repositories
         async Task IUserRepository.AddAsync(string username, string email,
                                                                 string password)
         {
-            string hash = Helpers.AuthHelper.HashCredentials(password);
+            string hash = AuthHelper.HashCredentials(password);
             var user = new UserDM { UserName = username, Email = email,
                                         PasswordHash = hash };            
             await ((IRepository<UserDM>)this).AddAsync(user).ConfigureAwait(false);
@@ -75,7 +76,7 @@ namespace RecipeStudioUI.Repositories
                 UserDM? user = await _context.Users.
                     FirstOrDefaultAsync(u => u.UserName == username).
                         ConfigureAwait(false);
-                if (user != null && Helpers.AuthHelper.
+                if (user != null && AuthHelper.
                     VerifyCredentials(password, user.PasswordHash))
                 {
                     return user;

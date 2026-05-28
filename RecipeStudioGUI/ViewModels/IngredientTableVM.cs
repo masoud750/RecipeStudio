@@ -1,10 +1,12 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
 using System.Collections.ObjectModel;
+using RecipeStudio.Repository.Interfaces;
 
 
-namespace RecipeStudioUI.ViewModels
+
+
+namespace RecipeStudio.UI.ViewModels
 {
     public class DesignIngredientVM : IngredientTableVM
     {

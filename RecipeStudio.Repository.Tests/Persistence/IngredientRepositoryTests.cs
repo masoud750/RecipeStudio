@@ -1,17 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NuGet.Frameworks;
-using RecipesDataAccess.Data;
-using Domain.Entities;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.Tests.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Presistence;
+using RecipeStudio.Repository.Tests.Helpers;
 
-namespace RecipeStudioUI.Tests.RepositoriesTests
+namespace RecipeStudio.UI.Tests.RepositoriesTests
 {
     internal class IngredientRepositoryTests
     {

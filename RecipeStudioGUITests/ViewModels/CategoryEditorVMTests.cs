@@ -1,5 +1,5 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.ViewModels;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

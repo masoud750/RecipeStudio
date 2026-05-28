@@ -1,13 +1,9 @@
-﻿using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.ViewModels;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class TableVM<T> : ModelBase where T : class
     {

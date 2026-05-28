@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Commands;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Commands;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class CategoryEditorVM : ModelBase
     {

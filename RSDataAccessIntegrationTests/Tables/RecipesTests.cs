@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 

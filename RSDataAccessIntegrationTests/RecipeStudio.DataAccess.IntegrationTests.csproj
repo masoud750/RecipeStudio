@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RecipeStudioDataAccess\RecipesDataAccess.csproj" />
+    <ProjectReference Include="..\RecipeStudioDataAccess\RecipeStudio.DataAccess.csproj" />
   </ItemGroup>
 
  

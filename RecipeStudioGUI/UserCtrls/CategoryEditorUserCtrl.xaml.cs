@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 
 
-namespace RecipeStudioUI.UserCtrls
+namespace RecipeStudio.UI.UserCtrls
 {
     /// <summary>
     /// Interaction logic for CategoryEditorUserCtrl.xaml

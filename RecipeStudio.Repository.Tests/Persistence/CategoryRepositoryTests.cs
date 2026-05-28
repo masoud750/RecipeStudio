@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
-using RecipeStudioUI.Repositories;
+﻿
+using Microsoft.EntityFrameworkCore;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Presistence;
+using RecipeStudio.Repository.Tests.Helpers;
 
 
-namespace RecipeStudioUI.Tests.RepositoriesTests
+
+namespace RecipeStudio.Repository.Tests.RepositoriesTests
 {
     internal class CategoryRepositoryTests
     {

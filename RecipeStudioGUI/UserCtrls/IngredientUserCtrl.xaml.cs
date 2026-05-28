@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RecipeStudioUI.UserCtrls
+namespace RecipeStudio.UI.UserCtrls
 {
     /// <summary>
     /// Interaction logic for IngredientUserCtrl.xaml

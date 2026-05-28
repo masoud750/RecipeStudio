@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.Domain.Entities;
+
 
 namespace RecipesDataAccessIntegrationTests.Tables
 {

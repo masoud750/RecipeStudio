@@ -1,13 +1,15 @@
-﻿using RecipesDataAccess.Data;
-using Domain.Entities;
-using RecipeStudioUI.Converters;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.Tests.Helpers;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Presistence;
+using RecipeStudio.UI.Converters;
 
-namespace RecipeStudioUI.Tests.Converters
+using RecipeStudioUI.Tests.Helpers;
+
+
+namespace RecipeStudio.UI.Tests.Converters
 {
     internal class BoolToBrushConverterTests
     {

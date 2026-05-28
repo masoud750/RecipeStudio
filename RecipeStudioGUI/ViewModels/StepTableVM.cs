@@ -1,14 +1,10 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
 
     // Design-time StepVM
@@ -29,7 +25,7 @@ namespace RecipeStudioUI.ViewModels
 
         public StepTableVM(IRepository<StepDM> repository, IMessageService msgService)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(Repositories));
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
 
             _msgService = msgService ?? throw new ArgumentNullException(nameof(msgService));
          

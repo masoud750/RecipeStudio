@@ -1,8 +1,9 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Windows;
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     // Design-time ViewModel
     //internal class DesignTableColumnsVM : TableColumnsVM

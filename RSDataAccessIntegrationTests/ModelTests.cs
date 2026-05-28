@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Domain.Entities;
+using RecipeStudio.Domain.Entities;
 
 
 

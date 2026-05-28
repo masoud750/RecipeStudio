@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
-using Domain.Entities;
-using RecipeStudioUI.Repositories;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository;
+using RecipeStudio.Repository.Presistence;
+using RecipeStudio.Repository.Tests.Helpers;
 
 
 
-namespace RecipeStudioUI.Tests.RepositoriesTests
+namespace RecipeStudio.UI.Tests.RepositoriesTests
 {
     internal class InstructionRepositoryTests
     {
@@ -24,7 +26,7 @@ namespace RecipeStudioUI.Tests.RepositoriesTests
         [Test]
         public void Constructor_PassingInvalidContext_ArgNullEx()
         {
-            var ex = Assert.Throws<ArgumentNullException>(() =>
+            var ex = Assert.Throws<ArgumentNullException>(static () =>
             {
                 _ = new InstructionRepository(null!);
             }

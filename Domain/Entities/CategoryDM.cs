@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Domain.Entities
+namespace RecipeStudio.Domain.Entities
 {
     public class CategoryDM : EntityBase
     {

@@ -1,11 +1,12 @@
-﻿using Domain.Entities;
+﻿
 using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
-
-namespace RecipeStudioUI.Repositories
+namespace RecipeStudio.Repository.Presistence
 {
-    internal class IngredientRepository : IRepository<IngredientDM>
+    public class IngredientRepository : IRepository<IngredientDM>
     {
 
         public IngredientRepository(RecipesDBContext context)

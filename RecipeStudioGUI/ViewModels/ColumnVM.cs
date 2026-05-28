@@ -1,8 +1,8 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 using System.Collections.ObjectModel;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class ColumnVM<T> : ModelBase where T : CellItemVM
     {

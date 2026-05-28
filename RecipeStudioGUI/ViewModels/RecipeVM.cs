@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class RecipeVM: ModelBase
     {

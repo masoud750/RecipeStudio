@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Domain.Entities
+namespace RecipeStudio.Domain.Entities
 {
     public class RecipeDM: EntityBase
     {

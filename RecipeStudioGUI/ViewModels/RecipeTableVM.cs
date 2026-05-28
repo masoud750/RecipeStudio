@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.Views;
-using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
+using Microsoft.EntityFrameworkCore;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.Views;
+using System.Collections.ObjectModel;
+using RecipeStudio.UI.Commands;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
     // Design-time RecipeVM
     internal class DesignRecipeVM : RecipeTableVM

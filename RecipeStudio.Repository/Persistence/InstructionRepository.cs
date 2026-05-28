@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
-using Domain.Entities;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
 
-namespace RecipeStudioUI.Repositories
+namespace RecipeStudio.Repository.Presistence
 {
     public class InstructionRepository : IRepository<StepDM>
     {

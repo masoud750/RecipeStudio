@@ -1,10 +1,12 @@
-﻿using Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
-using RecipesGUI;
+using RecipeStudio.DataAccess.Data;
+
+using RecipeStudio.Repository.Tests.Helpers;
+using RecipeStudio.Repository.Presistence;
 
 
-namespace RecipeStudioUI.Tests.RepositoriesTests
+namespace RecipeStudio.UI.Tests.RepositoriesTests
 {
     internal class RecipeRepositoryTests
     {

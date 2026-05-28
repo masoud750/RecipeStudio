@@ -1,11 +1,11 @@
-﻿using RecipeStudioUI.ViewModels;
-using RecipeStudioUI.Views;
+﻿using RecipeStudio.UI.ViewModels;
+using RecipeStudio.UI.Views;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using Domain.Entities;
+using RecipeStudio.Domain.Entities;
 
-namespace RecipeStudioUI.UserCtrls
+namespace RecipeStudio.UI.UserCtrls
 {
     /// <summary>
     /// Interaction logic for RecipeUserCtrl.xaml

@@ -1,6 +1,6 @@
-﻿using RecipeStudioUI.Helpers;
+﻿using RecipeStudio.UI.Helpers;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class DesignMessageServiceFake : IMessageService
     {

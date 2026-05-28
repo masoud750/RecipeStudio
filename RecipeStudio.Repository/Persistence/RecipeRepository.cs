@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
-using Domain.Entities;
-using RecipeStudioUI.Repositories;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
 
-namespace RecipesGUI
+
+namespace RecipeStudio.Repository.Presistence
 {
 
     public class RecipeRepository : IRepository<RecipeDM>

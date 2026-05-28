@@ -1,7 +1,9 @@
-﻿using Domain.Entities;
-using RecipeStudioUI.Repositories;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+
+
+namespace RecipeStudio.UI.ViewModels
 {
     internal class FakeStepRepository : IRepository<StepDM>
     {

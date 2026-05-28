@@ -2,8 +2,9 @@
 
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Design;
+using RecipeStudio.DataAccess.Data;
 
-    namespace RecipesDataAccess.Data
+namespace Recipestudio.DataAccess.Data
     {
         public class RecipesDBContextFactory : IDesignTimeDbContextFactory<RecipesDBContext>
         {

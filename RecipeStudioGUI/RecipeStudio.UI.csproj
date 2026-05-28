@@ -25,13 +25,13 @@
 
 	<ItemGroup>
 		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-			<_Parameter1>RecipeStudioUI.Tests</_Parameter1>
+			<_Parameter1>RecipeStudio.UI.Tests</_Parameter1>
 		</AssemblyAttribute>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Domain\Domain.csproj" />
-	  <ProjectReference Include="..\RecipeStudioDataAccess\RecipesDataAccess.csproj" />
+	  <ProjectReference Include="..\Domain\RecipeStudio.Domain.csproj" />
+	  <ProjectReference Include="..\RecipeStudio.Repository\RecipeStudio.Repository.csproj" />
 	</ItemGroup>
 
 
