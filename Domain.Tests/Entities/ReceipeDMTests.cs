@@ -11,7 +11,8 @@ namespace RecipesDataAccessIntegrationTests.Models
         public void RecipeDM_TryCrecateInstanceWithoutStep_ThrowsException()
         {
             bool isThrown = false;
-            var user = new UserDM { UserName = "chef1", Email = "chef1@test.com", PasswordHash= "7##65" };
+            var user = new UserDM { UserName = "chef1", Email = "chef1@test.com",
+                                                        PasswordHash= "7##65" };
             var category = new CategoryDM { Name = "Dessert" };
             var ingredient = new IngredientDM { Name = "Egg", Quantity="2" };
             try

@@ -40,6 +40,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Domain\RecipeStudio.Domain.csproj" />
+	  <ProjectReference Include="..\RecipeStudio.Repository\RecipeStudio.Repository.csproj" />
 	  <ProjectReference Include="..\RecipeStudioGUI\RecipeStudio.UI.csproj" />
 	</ItemGroup>
 
