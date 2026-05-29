@@ -155,7 +155,7 @@ namespace RecipesUI.Tests.ViewModelsTests
         }
 
         [Test]
-        public void SaveCmd_CanExecute_ReturnsFalse_WhenUserIsNotLoggedIn()
+        public void SaveCmd_CanExecute_WhenUserIsNotLoggedIn_ReturnsFalse()
         {
             ObservableCollection<CategoryDM> selectedCategories = new();
             ObservableCollection<CategoryDM> availableCategories = new();
@@ -186,7 +186,7 @@ namespace RecipesUI.Tests.ViewModelsTests
         }
 
         [Test]
-        public void SaveCmd_CanExecute_ReturnsFalse_WhenNoItemSelected()
+        public void SaveCmd_CanExecute_WhenNoItemSelected_ReturnsFalse()
         {
             ObservableCollection<CategoryDM> selectedCategories = new();
             ObservableCollection<CategoryDM> availableCategories = new();

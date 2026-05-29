@@ -124,7 +124,7 @@ namespace RecipeStudio.UI.Tests.RepositoriesTests
         }
 
         [Test]
-        public async Task UpdateAsync_UpdateName_Success()
+        public async Task UpdateAsync_UpdateName()
         {
             var sut = new RecipeRepository(_dbContext);
 

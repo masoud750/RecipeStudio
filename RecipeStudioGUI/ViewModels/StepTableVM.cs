@@ -25,10 +25,12 @@ namespace RecipeStudio.UI.ViewModels
 
         public StepTableVM(IRepository<StepDM> repository, IMessageService msgService)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _repository = repository ?? 
+                            throw new ArgumentNullException(nameof(repository));
 
-            _msgService = msgService ?? throw new ArgumentNullException(nameof(msgService));
-         
+            _msgService = msgService ??
+                            throw new ArgumentNullException(nameof(msgService));
+
         }
 
         public IRepository<StepDM> Repository { get { return _repository; } }
@@ -58,6 +60,7 @@ namespace RecipeStudio.UI.ViewModels
 
         public async Task AddAsync(StepDM step)
         {
+            ArgumentNullException.ThrowIfNull(step, nameof(step));
             try
             {
                 await _repository.AddAsync(step);
@@ -73,6 +76,7 @@ namespace RecipeStudio.UI.ViewModels
 
         public async Task UpdateAsync(StepDM step)
         {
+            ArgumentNullException.ThrowIfNull(step,nameof(step));
             try
             {
                 await _repository.UpdateAsync(step);
@@ -82,11 +86,11 @@ namespace RecipeStudio.UI.ViewModels
                     var index = Steps.IndexOf(existing);
                     Steps[index] = step;
                 }
-                _msgService.ShowMessage("Step updated successfully.",Helpers.MessageType.Info,"Update Data");
+                _msgService.ShowMessage("Step updated successfully.", Helpers.MessageType.Info, "Update Data");
             }
             catch (Exception ex)
             {
-                _msgService.ShowMessage($"Error while updating step: {ex.Message}", 
+                _msgService.ShowMessage($"Error while updating step: {ex.Message}",
                     Helpers.MessageType.Info, "Update Data");
             }
         }
