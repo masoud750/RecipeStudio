@@ -46,10 +46,10 @@ namespace RecipeStudio.UI.ViewModels
              IMessageService msgService)
         {
 
-            _repository = repository ??
-              throw new ArgumentNullException(nameof(repository));
+            _repository = repository??
+                throw new ArgumentNullException(nameof(repository));
             _msgService = msgService ??
-                throw new ArgumentNullException(nameof(msgService));
+                                   throw new ArgumentNullException(nameof(msgService));
         }
 
 
@@ -226,11 +226,11 @@ namespace RecipeStudio.UI.ViewModels
                             MessageBox.Show("The query could not be executed.");
                         }
 
-                       
+
                     }
                    ,
                     canExecute: _ =>
-                    {
+                    {                       
                         return CurrentSelectedCategoryIndex > 0;
                     }
                    );
@@ -283,7 +283,7 @@ namespace RecipeStudio.UI.ViewModels
                    ,
                     canExecute: _ =>
                     {
-                        return CurrentSelectedIngredientIndex > 0;
+                       return CurrentSelectedIngredientIndex > 0;
                     }
                    );
                 }
