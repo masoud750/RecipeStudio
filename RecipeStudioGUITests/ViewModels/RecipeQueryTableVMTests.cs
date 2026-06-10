@@ -7,6 +7,7 @@ using RecipeStudioUI.Tests.Mocks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
@@ -320,6 +321,42 @@ namespace RecipeStudio.UI.Tests.ViewModels
             Assert.That(canExecute, Is.True);
             addToFavorite.Execute(null);
             Assert.That(sut.CurrentUser.FavoriteRecipes.Count, Is.EqualTo(2));
+        }
+
+        [Test]
+        public async Task ShowMyFavoriteCmd_CanExecute_WhenCurrentUserIsNotNull_ReturnsTrue()
+        {
+            var dbContext = TestHelper.GetDbContext();
+            var repo = new RecipeRepository(dbContext);
+            RecipeQueryTableVM sut = new(repo,
+                 new MessageServiceMock());
+            List<RecipeDM> recipes = (List<RecipeDM>)await repo.GetAllAsync();
+            string name = TestContext.CurrentContext.Test.Name;        
+            Assert.That(sut.CurrentUser, Is.Null);
+            ICommand cmd = sut.ShowMyFavoriteCmd;
+            Assert.That(cmd.CanExecute(null), Is.False);
+            sut.CurrentUser = recipes[0].User;
+            Assert.That(sut.CurrentUser.FavoriteRecipes.Count, Is.EqualTo(1));
+            Assert.That(cmd.CanExecute(null), Is.True);
+        }
+
+        [Test]
+        public async Task ShowMyFavoriteCmd_CanExecute_WhenNoFarvoirteExists_ReturnFalse()
+        {
+            var dbContext = TestHelper.GetDbContext();
+            var repo = new RecipeRepository(dbContext);
+            RecipeQueryTableVM sut = new(repo,
+                 new MessageServiceMock());
+            List<RecipeDM> recipes = (List<RecipeDM>)await repo.GetAllAsync();
+            string name = TestContext.CurrentContext.Test.Name;
+            Assert.That(sut.CurrentUser, Is.Null);
+            ICommand cmd = sut.ShowMyFavoriteCmd;
+            Assert.That(cmd.CanExecute(null), Is.False);
+            sut.CurrentUser = recipes[0].User;        
+            Assert.That(sut.CurrentUser.FavoriteRecipes.Count, Is.EqualTo(1));
+            sut.CurrentUser.FavoriteRecipes.Clear();
+            Assert.That(sut.CurrentUser.FavoriteRecipes.Count, Is.EqualTo(0));
+            Assert.That(cmd.CanExecute(null), Is.False);
         }
     }
 }

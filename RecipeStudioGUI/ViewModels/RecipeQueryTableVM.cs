@@ -374,6 +374,7 @@ namespace RecipeStudio.UI.ViewModels
                     canExecute: _ =>
                     {
                         return CurrentUser != null && CurrentUser!.FavoriteRecipes.Count > 0;
+                      ;
                     }
                    );
                 }
