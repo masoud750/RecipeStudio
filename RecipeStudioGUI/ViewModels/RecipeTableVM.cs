@@ -41,11 +41,11 @@ namespace RecipeStudio.UI.ViewModels
  
         private readonly IRepository<RecipeDM> _repository;
         private readonly IMessageService _msgService;
-        public TableColumnsVM ColumnsVM
+        public TableCollectionVM CollectionVM
         {
             get;
         }
-        private readonly TableColumnsVM? _columnsVM;
+        private readonly TableCollectionVM? _collectionVM;
 
       
 
