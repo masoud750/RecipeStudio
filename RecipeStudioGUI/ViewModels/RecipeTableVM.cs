@@ -143,10 +143,7 @@ namespace RecipeStudio.UI.ViewModels
 
                     _msgService.ShowMessage("Recipe updated successfully.",
                      Helpers.MessageType.Info, "Info");
-
-                }
-
-                
+                }                
             }
             catch (Exception ex)
             {
@@ -172,12 +169,6 @@ namespace RecipeStudio.UI.ViewModels
                       Helpers.MessageType.Error, "Delete Data");
             }
         }
-
-
-
-
-  
-
 
         public void FakeDeleteAsync()
         {
@@ -382,7 +373,5 @@ namespace RecipeStudio.UI.ViewModels
                
             }
         }
-
-       
     }
 }
