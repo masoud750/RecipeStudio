@@ -1,13 +1,9 @@
-﻿using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Repositories;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Windows;
-using System.Windows.Input;
-using System.Windows.Threading;
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     // Design-time ViewModel
     //internal class DesignTableColumnsVM : TableColumnsVM

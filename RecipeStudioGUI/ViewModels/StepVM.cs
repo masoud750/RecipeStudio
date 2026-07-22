@@ -1,6 +1,6 @@
-﻿using RecipesDataAccess.Models;
+﻿using RecipeStudio.Domain.Entities;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class StepVM : CellItemVM
     {

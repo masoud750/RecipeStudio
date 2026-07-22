@@ -1,9 +1,8 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using RecipeStudio.Domain.Entities;
 using NUnit.Framework.Internal;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using RecipeStudio.UI.ViewModels;
 
 namespace RecipesGUITests.ViewModels
 
@@ -32,7 +31,7 @@ namespace RecipesGUITests.ViewModels
         public void AddRecipeCommand_CanExecute_InvalidInput_ReturnsFalse()
         {
 
-            var editor = new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+            var editor = new AddRecipeEditorVM(
                 new ItemChooserVM<CategoryVM>(_categoryColumn),
                 new ItemChooserVM<StepVM>(_instructionColumn),
                 new ItemChooserVM<IngredientVM>(_ingredientColumn));
@@ -56,7 +55,7 @@ namespace RecipesGUITests.ViewModels
             });
             _ingredientColumn.Items.Add(ingredient);
 
-            var editor = new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+            var editor = new AddRecipeEditorVM(
                new ItemChooserVM<CategoryVM>(_categoryColumn),
                new ItemChooserVM<StepVM>(_instructionColumn),
                new ItemChooserVM<IngredientVM>(_ingredientColumn));
@@ -84,7 +83,7 @@ namespace RecipesGUITests.ViewModels
             });
             _ingredientColumn.Items.Add(ingredient);
 
-            var editor = new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+            var editor = new RecipeStudio.UI.ViewModels.AddRecipeEditorVM(
                new ItemChooserVM<CategoryVM>(_categoryColumn),
                new ItemChooserVM<StepVM>(_instructionColumn),
                new ItemChooserVM<IngredientVM>(_ingredientColumn));
@@ -120,7 +119,7 @@ namespace RecipesGUITests.ViewModels
 
             var ex = Assert.Throws<ArgumentNullException>(() =>
             {
-                new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+                new RecipeStudio.UI.ViewModels.AddRecipeEditorVM(
                categoryChooser: null!,
                new ItemChooserVM<StepVM>(_instructionColumn),
                new ItemChooserVM<IngredientVM>(_ingredientColumn));
@@ -145,7 +144,7 @@ namespace RecipesGUITests.ViewModels
                     });
                     _ingredientColumn.Items.Add(ingredient);
 
-                    var editor = new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+                    var editor = new RecipeStudio.UI.ViewModels.AddRecipeEditorVM(
                        new ItemChooserVM<CategoryVM>(_categoryColumn),
                        null!,
                        new ItemChooserVM<IngredientVM>(_ingredientColumn));
@@ -166,7 +165,7 @@ namespace RecipesGUITests.ViewModels
                     _instructionColumn.Items.Add(instruction);
                   
 
-                    var editor = new RecipeStudioUI.ViewModels.AddRecipeEditorVM(
+                    var editor = new AddRecipeEditorVM(
                        new ItemChooserVM<CategoryVM>(_categoryColumn),
                        new ItemChooserVM<StepVM>(_instructionColumn),
                        null!);

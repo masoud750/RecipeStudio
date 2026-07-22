@@ -1,13 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
 
 namespace RecipesDataAccessIntegrationTests.Tables
 {

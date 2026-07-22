@@ -1,15 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Windows;
 using System.Windows.Input;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.Repository.Interfaces;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
 
 
@@ -47,10 +46,10 @@ namespace RecipeStudioUI.ViewModels
              IMessageService msgService)
         {
 
-            _repository = repository ??
-              throw new ArgumentNullException(nameof(repository));
+            _repository = repository??
+                throw new ArgumentNullException(nameof(repository));
             _msgService = msgService ??
-                throw new ArgumentNullException(nameof(msgService));
+                                   throw new ArgumentNullException(nameof(msgService));
         }
 
 
@@ -227,11 +226,11 @@ namespace RecipeStudioUI.ViewModels
                             MessageBox.Show("The query could not be executed.");
                         }
 
-                       
+
                     }
                    ,
                     canExecute: _ =>
-                    {
+                    {                       
                         return CurrentSelectedCategoryIndex > 0;
                     }
                    );
@@ -284,7 +283,7 @@ namespace RecipeStudioUI.ViewModels
                    ,
                     canExecute: _ =>
                     {
-                        return CurrentSelectedIngredientIndex > 0;
+                       return CurrentSelectedIngredientIndex > 0;
                     }
                    );
                 }
@@ -375,6 +374,7 @@ namespace RecipeStudioUI.ViewModels
                     canExecute: _ =>
                     {
                         return CurrentUser != null && CurrentUser!.FavoriteRecipes.Count > 0;
+                      ;
                     }
                    );
                 }

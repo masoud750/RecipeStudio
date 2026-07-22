@@ -1,22 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.UserCtrls;
-using RecipeStudioUI.Views;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
+using Microsoft.EntityFrameworkCore;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.Views;
+using System.Collections.ObjectModel;
+using RecipeStudio.UI.Commands;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
     // Design-time RecipeVM
     internal class DesignRecipeVM : RecipeTableVM

@@ -1,13 +1,10 @@
-﻿
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.ViewModels;
+﻿using RecipeStudio.UI.Helpers;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
 
 
@@ -39,7 +36,7 @@ namespace RecipeStudioUI.ViewModels
         public IRepository<CategoryDM> Repository {  get {  return _repository; }  }
 
         private readonly IRepository<CategoryDM> _repository;
-        private readonly IMessageService _msgService;
+        private readonly RecipeStudio.UI.Helpers.IMessageService _msgService;
 
         public async Task InitializeAsync()
         {

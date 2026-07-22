@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using RecipeStudioUI.Helpers;
+using RecipeStudio.UI.Helpers;
 
 namespace RecipeStudioUI.Tests.Mocks
 {

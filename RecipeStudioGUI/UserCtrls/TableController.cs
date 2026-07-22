@@ -1,14 +1,7 @@
-﻿using RecipesDataAccess.Models;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RecipeStudio.UI.ViewModels;
 
-namespace RecipeStudioUI.UserCtrls
+
+namespace RecipeStudio.UI.UserCtrls
 {
     public class TableController : ModelBase
     {

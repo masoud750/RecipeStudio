@@ -1,4 +1,4 @@
-﻿using RecipeStudioUI.ViewModels;
+﻿using RecipeStudio.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace RecipeStudioUI.Views
+namespace RecipeStudio.UI.Views
 {
     /// <summary>
     /// Interaction logic for LogInDialog.xaml

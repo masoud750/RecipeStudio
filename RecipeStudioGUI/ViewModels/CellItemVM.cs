@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class CellItemVM: ModelBase
     {
@@ -20,11 +16,6 @@ namespace RecipeStudioUI.ViewModels
 
 
         private bool _isSelected;
-
-       
-
-      
-
 
         public virtual string Name
         {

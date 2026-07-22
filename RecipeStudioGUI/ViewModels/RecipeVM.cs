@@ -1,11 +1,6 @@
-﻿using RecipesDataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RecipeStudio.Domain.Entities;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class RecipeVM: ModelBase
     {

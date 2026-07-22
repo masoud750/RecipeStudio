@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RecipeStudioUI.Helpers
+namespace RecipeStudio.UI.Helpers
 {
     public interface IMessageService
     {

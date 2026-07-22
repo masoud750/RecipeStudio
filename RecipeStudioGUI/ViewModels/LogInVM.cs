@@ -1,22 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Threading;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.UI.Helpers;
+using System.Windows.Controls;
+using RecipeStudio.Repository.Presistence;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     public class LogInVM : ModelBase
     {
@@ -249,7 +240,6 @@ namespace RecipeStudioUI.ViewModels
             return !string.IsNullOrEmpty(Username); 
    
             }
-
 
             private async Task DoLogIn(PasswordBox pwdBox)
             {

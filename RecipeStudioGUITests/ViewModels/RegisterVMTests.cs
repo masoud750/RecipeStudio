@@ -1,9 +1,9 @@
 ﻿
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
+using RecipeStudio.UI.Helpers;
 using RecipeStudioUI.Tests.Helpers;
 using RecipeStudioUI.Tests.Mocks;
-using RecipeStudioUI.ViewModels;
+using RecipeStudio.UI.ViewModels;
+using RecipeStudio.Repository.Presistence;
 
 namespace RecipesUI.Tests.ViewModelsTests
 {
@@ -18,7 +18,7 @@ namespace RecipesUI.Tests.ViewModelsTests
             var ex = Assert.Throws<ArgumentNullException>(
                 () =>
                 {
-                    _ = new RecipeStudioUI.ViewModels.RegisterVM(null!, new MessageBoxService());
+                    _ = new RegisterVM(null!, new MessageBoxService());
                 });
        
             Assert.That(ex.ParamName, Is.EqualTo("repository"));

@@ -3,7 +3,7 @@ using System.Text;
 using System.Windows;
 
 
-namespace RecipeStudioUI.Listeners
+namespace RecipeStudio.UI.Listeners
 {
     internal class BindingErrorTraceListener: DefaultTraceListener
     {

@@ -1,12 +1,6 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.ViewModels;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.ViewModels;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace RecipesUI.Tests.ViewModelsTests
@@ -161,7 +155,7 @@ namespace RecipesUI.Tests.ViewModelsTests
         }
 
         [Test]
-        public void SaveCmd_CanExecute_ReturnsFalse_WhenUserIsNotLoggedIn()
+        public void SaveCmd_CanExecute_WhenUserIsNotLoggedIn_ReturnsFalse()
         {
             ObservableCollection<CategoryDM> selectedCategories = new();
             ObservableCollection<CategoryDM> availableCategories = new();
@@ -192,7 +186,7 @@ namespace RecipesUI.Tests.ViewModelsTests
         }
 
         [Test]
-        public void SaveCmd_CanExecute_ReturnsFalse_WhenNoItemSelected()
+        public void SaveCmd_CanExecute_WhenNoItemSelected_ReturnsFalse()
         {
             ObservableCollection<CategoryDM> selectedCategories = new();
             ObservableCollection<CategoryDM> availableCategories = new();

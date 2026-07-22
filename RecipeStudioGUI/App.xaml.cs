@@ -1,21 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using RecipesDataAccess.Data;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.Services;
-using RecipeStudioUI.UserCtrls;
-using RecipeStudioUI.ViewModels;
-using System.Configuration;
-using System.Data;
 using System.IO;
 using System.Windows;
+using RecipeStudio.DataAccess.Data;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
 
-namespace RecipesGUI
+using RecipeStudio.UI.Services;
+using RecipeStudio.UI.UserCtrls;
+using RecipeStudio.UI.ViewModels;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.Repository.Presistence;
+
+
+
+namespace RecipeStudio.UI
 {
     /// <summary>
     /// Interaction logic for App.xaml

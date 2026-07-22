@@ -1,14 +1,10 @@
-﻿using RecipesDataAccess.Models;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
 
     // Design-time StepVM
@@ -29,10 +25,12 @@ namespace RecipeStudioUI.ViewModels
 
         public StepTableVM(IRepository<StepDM> repository, IMessageService msgService)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(Repositories));
+            _repository = repository ?? 
+                            throw new ArgumentNullException(nameof(repository));
 
-            _msgService = msgService ?? throw new ArgumentNullException(nameof(msgService));
-         
+            _msgService = msgService ??
+                            throw new ArgumentNullException(nameof(msgService));
+
         }
 
         public IRepository<StepDM> Repository { get { return _repository; } }
@@ -62,6 +60,7 @@ namespace RecipeStudioUI.ViewModels
 
         public async Task AddAsync(StepDM step)
         {
+            ArgumentNullException.ThrowIfNull(step, nameof(step));
             try
             {
                 await _repository.AddAsync(step);
@@ -77,6 +76,7 @@ namespace RecipeStudioUI.ViewModels
 
         public async Task UpdateAsync(StepDM step)
         {
+            ArgumentNullException.ThrowIfNull(step,nameof(step));
             try
             {
                 await _repository.UpdateAsync(step);
@@ -86,11 +86,11 @@ namespace RecipeStudioUI.ViewModels
                     var index = Steps.IndexOf(existing);
                     Steps[index] = step;
                 }
-                _msgService.ShowMessage("Step updated successfully.",Helpers.MessageType.Info,"Update Data");
+                _msgService.ShowMessage("Step updated successfully.", Helpers.MessageType.Info, "Update Data");
             }
             catch (Exception ex)
             {
-                _msgService.ShowMessage($"Error while updating step: {ex.Message}", 
+                _msgService.ShowMessage($"Error while updating step: {ex.Message}",
                     Helpers.MessageType.Info, "Update Data");
             }
         }

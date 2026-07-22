@@ -1,13 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using RecipesDataAccess.Models;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RecipeStudioUI.ViewModels
+
+namespace RecipeStudio.UI.ViewModels
 {
     public class ColumnVM<T> : ModelBase where T : CellItemVM
     {

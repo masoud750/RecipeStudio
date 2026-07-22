@@ -1,18 +1,17 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using RecipeStudioUI.Services;
-using RecipeStudioUI.UserCtrls;
-using RecipeStudioUI.Views;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.UI.Helpers;
+using RecipeStudio.Repository.Interfaces;
+
+using RecipeStudio.UI.Services;
+using RecipeStudio.UI.UserCtrls;
+using RecipeStudio.UI.Views;
 using System.Windows;
 using System.Windows.Input;
+using RecipeStudio.Domain.Entities;
 
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
 
 
@@ -93,7 +92,7 @@ namespace RecipeStudioUI.ViewModels
     }
 
     // Design-time MainVM
-    internal class DesignMainVM : MainVM
+     public class DesignMainVM : MainVM
     {
         public DesignMainVM()
             : base(new RegisterVMDesigner(new UserRepositoryFake(), new

@@ -1,15 +1,10 @@
-﻿using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Commands;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     internal class CategoryEditorVM : ModelBase
     {

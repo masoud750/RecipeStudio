@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Data;
+using RecipeStudio.DataAccess.Data;
 
 
 namespace RecipesDataAccessIntegrationTests

@@ -1,19 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipesDataAccess.Models;
-using RecipeStudioUI.Commands;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-
-using RecipeStudioUI.Views;
-using SQLitePCL;
-using System.CodeDom.Compiler;
+using RecipeStudio.UI.Commands;
+using RecipeStudio.UI.Helpers;
 using System.Net.Mail;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
+using RecipeStudio.Domain.Entities;
+using RecipeStudio.Repository.Interfaces;
+using RecipeStudio.Repository.Presistence;
 
-namespace RecipeStudioUI.ViewModels
+namespace RecipeStudio.UI.ViewModels
 {
     
     public class RegisterVMDesigner : RegisterVM

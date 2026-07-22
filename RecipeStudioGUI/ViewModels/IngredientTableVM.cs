@@ -1,14 +1,12 @@
-﻿using RecipesDataAccess.Models;
-using RecipeStudioUI.Helpers;
-using RecipeStudioUI.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using RecipeStudio.Domain.Entities;
+using RecipeStudio.UI.Helpers;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudioUI.ViewModels
+
+
+
+namespace RecipeStudio.UI.ViewModels
 {
     public class DesignIngredientVM : IngredientTableVM
     {
