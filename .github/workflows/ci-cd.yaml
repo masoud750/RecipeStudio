@@ -1,0 +1,71 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+
+  # -------------------------
+  # CI JOB (mit Coverage)
+  # -------------------------
+  ci:
+    name: CI - Build, Test, Coverage
+    runs-on: windows-latest
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Debug --no-restore
+
+      - name: Test with Coverage
+        run: dotnet test --verbosity normal --collect:"XPlat Code Coverage"
+
+      - name: Clean old coverage folder
+        shell: pwsh
+        run: |
+          if (Test-Path coverage) { Remove-Item -Recurse -Force coverage }
+          New-Item -ItemType Directory -Path coverage | Out-Null
+
+      - name: Install ReportGenerator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+
+      - name: Create Coverage Report (HTML)
+        run: reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage -reporttypes:Html
+
+      - name: Upload Coverage Report (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-html
+          path: coverage
+
+
+  # -------------------------
+  # CD JOB (ohne Coverage)
+  # -------------------------
+  cd:
+    name: CD - Release Build for PRs to main
+    runs-on: windows-latest
+    needs: ci
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Release Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Tests
+        run: dotnet test --verbosity normal
