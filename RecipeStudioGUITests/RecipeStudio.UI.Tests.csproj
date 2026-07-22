@@ -12,10 +12,13 @@
   <ItemGroup>
     <Compile Remove="coveragereport\**" />
     <Compile Remove="Docs\**" />
+    <Compile Remove="TestResults\**" />
     <EmbeddedResource Remove="coveragereport\**" />
     <EmbeddedResource Remove="Docs\**" />
+    <EmbeddedResource Remove="TestResults\**" />
     <None Remove="coveragereport\**" />
     <None Remove="Docs\**" />
+    <None Remove="TestResults\**" />
   </ItemGroup>
 
   <ItemGroup>
