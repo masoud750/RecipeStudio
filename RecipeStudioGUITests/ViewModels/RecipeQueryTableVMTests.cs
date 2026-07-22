@@ -1,16 +1,8 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using RecipeStudio.Domain.Entities;
+﻿using RecipeStudio.Domain.Entities;
 using RecipeStudio.Repository.Presistence;
 using RecipeStudio.UI.ViewModels;
 using RecipeStudioUI.Tests.Helpers;
 using RecipeStudioUI.Tests.Mocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace RecipeStudio.UI.Tests.ViewModels
@@ -36,7 +28,8 @@ namespace RecipeStudio.UI.Tests.ViewModels
             var ex = Assert.Throws<ArgumentNullException>(static () =>
             {
                 var contex = TestHelper.GetDbContext();
-                _ = new RecipeQueryTableVM(new RecipeQueriesRepository(contex),
+                _ = new RecipeQueryTableVM(new
+                        RecipeStudio.Repository.Presistence.RecipeQueryRepository(contex),
                     null!);
             });
 

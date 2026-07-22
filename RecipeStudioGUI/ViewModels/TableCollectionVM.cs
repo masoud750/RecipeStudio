@@ -5,35 +5,31 @@ using System.Collections.Specialized;
 using System.Windows;
 namespace RecipeStudio.UI.ViewModels
 {
-    // Design-time ViewModel
-    //internal class DesignTableColumnsVM : TableColumnsVM
-    //{
-    //    public DesignTableColumnsVM()
-    //        : base(new DesignCategoryVM(), new DesignRecipeVM(), 
-    //              new DesignStepVM(), new DesignIngredientVM(),
-    //              new DesignMessageServiceFake())
-    //    {
-    //    }
-    //}
-
-    public class TableColumnsVM : ModelBase  
+    public class TableCollectionVM : ModelBase  
     {
 
         // Constructor injection
-        public TableColumnsVM(CategoryTableVM categoryVM, RecipeTableVM recipeVM, StepTableVM stepVm,
-            IngredientTableVM ingredientVM,RecipeQueryTableVM queryVM,Helpers.IMessageService msgService)
+        public TableCollectionVM(CategoryTableVM categoryVM, 
+                                    RecipeTableVM recipeVM, StepTableVM stepVM,
+                                        IngredientTableVM ingredientVM,
+                                    RecipeQueryTableVM queryVM,
+                                        Helpers.IMessageService msgService)
         {
-            Category = categoryVM ?? throw new ArgumentNullException(nameof(categoryVM));
-          
-            Step = stepVm ?? throw new ArgumentNullException(nameof(stepVm));
-            _msgService = msgService ?? throw new ArgumentNullException(nameof(msgService));
-            Ingredient = ingredientVM ?? throw new ArgumentNullException(nameof(ingredientVM));
-
-            Recipe = recipeVM ?? throw new ArgumentNullException(nameof(recipeVM));
+            ArgumentNullException.ThrowIfNull(categoryVM, nameof(categoryVM));
+            ArgumentNullException.ThrowIfNull(recipeVM, nameof(recipeVM));
+            ArgumentNullException.ThrowIfNull(stepVM, nameof(stepVM));
+            ArgumentNullException.ThrowIfNull(ingredientVM, nameof(ingredientVM));
+            ArgumentNullException.ThrowIfNull(queryVM, nameof(queryVM));
+            ArgumentNullException.ThrowIfNull(msgService, nameof(msgService));
+            Category = categoryVM;
+            Recipe = recipeVM;
+            Step = stepVM;
+            _msgService = msgService;
+            Ingredient = ingredientVM;
+            Query = queryVM;
             Recipe.AllCategories = Category.CategoryModels;
             Recipe.AllIngredients = Ingredient.Ingredients;
-            Recipe.AllSteps = Step.Steps;
-            Query = queryVM ?? throw new ArgumentNullException(nameof(queryVM));
+            Recipe.AllSteps = Step.Steps;           
         }
 
        

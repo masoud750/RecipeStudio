@@ -278,7 +278,6 @@ namespace RecipeStudio.UI.ViewModels
                             MessageBox.Show("The query could not be executed.");
                         }
 
-
                     }
                    ,
                     canExecute: _ =>
@@ -370,7 +369,7 @@ namespace RecipeStudio.UI.ViewModels
                             Recipes.Add(favorite);
                         }
                     }
-                   ,
+                    ,
                     canExecute: _ =>
                     {
                         return CurrentUser != null && CurrentUser!.FavoriteRecipes.Count > 0;

@@ -44,7 +44,6 @@ namespace RecipeStudio.UI
             var dbPath = Path.Combine(dbFolder, "RecipesDB.db");
 
 
-
             // 1. DbContext registrieren
             services.AddDbContext<RecipesDBContext>(options => { 
                                 options.UseSqlite($"Data Source={dbPath}"); });
@@ -69,7 +68,7 @@ namespace RecipeStudio.UI
             services.AddTransient<StepTableVM>();
             services.AddTransient<IngredientTableVM>();
             services.AddTransient<RecipeQueryTableVM>();
-            services.AddTransient<TableColumnsVM>();
+            services.AddTransient<TableCollectionVM>();
             services.AddTransient<RegisterVM>();
 
             // 6. Views

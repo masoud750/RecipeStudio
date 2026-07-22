@@ -98,7 +98,7 @@ namespace RecipeStudio.UI.ViewModels
             : base(new RegisterVMDesigner(new UserRepositoryFake(), new
                   DesignMessageServiceFake()),                
                 new LogInVM(),
-                new TableColumnsVM(
+                new TableCollectionVM(
                     new DesignCategoryVM(),
                     new DesignRecipeVM(),
                     new DesignStepVM(),
@@ -131,7 +131,7 @@ namespace RecipeStudio.UI.ViewModels
         internal MainVM(
                 RegisterVM regVM,
                 LogInVM logInVM,
-                TableColumnsVM columnsVM,
+                TableCollectionVM columnsVM,
                 IMessageService msgService)
         {
             ColumnsVM = columnsVM ?? throw new ArgumentNullException(nameof(columnsVM));
@@ -155,7 +155,7 @@ namespace RecipeStudio.UI.ViewModels
             IMessageService msgService,IServiceProvider provider)
         {
 
-            ColumnsVM = provider.GetRequiredService<TableColumnsVM>();
+            ColumnsVM = provider.GetRequiredService<TableCollectionVM>();
             LogInManager = provider.GetRequiredService<LogInVM>();
             LogInManager.LoggedIn += UpdateSessionState;
             _msgService = msgService ?? throw new ArgumentNullException(nameof(msgService));
@@ -175,7 +175,7 @@ namespace RecipeStudio.UI.ViewModels
         private readonly IDataService _data;
         public RegisterVM RegisterManager { get; set; }
         public LogInVM LogInManager { get; set; }
-        public TableColumnsVM ColumnsVM { get; set; }
+        public TableCollectionVM ColumnsVM { get; set; }
         public TableController TableController { get; }
 
 

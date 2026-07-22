@@ -3,13 +3,13 @@ using RecipeStudio.DataAccess.Data;
 using RecipeStudio.Domain.Entities;
 using RecipeStudio.Repository.Interfaces;
 
-namespace RecipeStudio.UI.ViewModels
+namespace RecipeStudio.Repository.Presistence
 {
-    public class RecipeQueriesRepository : IRepository<RecipeDM>
+    public class RecipeQueryRepository : IRepository<RecipeDM>
     {
 
 
-        public RecipeQueriesRepository(RecipesDBContext context)
+        public RecipeQueryRepository(RecipesDBContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }

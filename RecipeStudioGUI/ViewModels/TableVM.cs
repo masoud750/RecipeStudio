@@ -6,13 +6,13 @@ using RecipeStudio.UI.ViewModels;
 namespace RecipeStudio.UI.ViewModels
 {
     public class TableVM<T> : ModelBase where T : class
-    {
-        
-
+    {       
         public TableVM(IRepository<T> repository, IMessageService msg)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
-            _msg = msg ?? throw new ArgumentNullException(nameof(msg));
+            ArgumentNullException.ThrowIfNull(repository, nameof(repository));
+            ArgumentNullException.ThrowIfNull(msg, nameof(msg));
+            _repository = repository;
+            _msg = msg;
         }
 
         private readonly IRepository<T> _repository;

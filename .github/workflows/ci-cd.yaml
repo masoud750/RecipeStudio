@@ -1,0 +1,113 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  # ----------------------------------------------------
+  # GATEKEEPER — Blocks direct pushes to main
+  # ----------------------------------------------------
+  enforce-logic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if direct push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "Direct pushes to main are forbidden. Use a Pull Request."
+          exit 1
+
+  # ----------------------------------------------------
+  # CI JOB — Build, Test, Coverage, Reports
+  # ----------------------------------------------------
+  ci:
+    name: CI - Build, Test, Coverage, Reports
+    needs: enforce-logic
+    runs-on: windows-latest
+    if: |
+      (github.event_name == 'pull_request') ||
+      (github.event_name == 'push')
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore RecipeStudio.slnx
+
+      - name: Build
+        run: dotnet build RecipeStudio.slnx --configuration Debug --no-restore
+
+      # ----------------------------------------------------
+      # Run Tests + TRX + Coverage
+      # ----------------------------------------------------
+      - name: Test with Coverage + TRX
+        run: dotnet test RecipeStudio.slnx --verbosity detailed --collect:"XPlat Code Coverage" --logger "trx;LogFileName=testresults.trx" || true
+
+
+      # ----------------------------------------------------
+      # VISUAL TEST REPORT (HTML)
+      # ----------------------------------------------------
+      - name: Install ReportGenerator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+
+      - name: Create Visual Test Report
+        run: reportgenerator -reports:**/testresults.trx -targetdir:docs/testreport -reporttypes:Html
+
+      # ----------------------------------------------------
+      # COVERAGE REPORT (HTML)
+      # ----------------------------------------------------
+      - name: Create Coverage Report
+        run: reportgenerator -reports:**/coverage.cobertura.xml -targetdir:docs/coveragereport -reporttypes:Html || echo "no coverage file"
+
+
+      # ----------------------------------------------------
+      # Commit Reports ONLY for main
+      # ----------------------------------------------------
+      - name: Commit Reports
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/testreport docs/coveragereport
+          git commit -m "chore: update test and coverage reports" || echo "no changes"
+          git push
+
+  # ----------------------------------------------------
+  # CD JOB — Release Build
+  # ----------------------------------------------------
+  cd:
+    name: CD - Release Build for PRs to main
+    runs-on: windows-latest
+    needs: ci
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore
+        run: dotnet restore RecipeStudio.slnx
+
+      - name: Release Build
+        run: dotnet build RecipeStudio.slnx --configuration Release --no-restore

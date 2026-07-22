@@ -1,9 +1,10 @@
 ﻿
+using NUnit.Framework.Internal;
+using RecipeStudio.Repository.Presistence;
 using RecipeStudio.UI.Helpers;
+using RecipeStudio.UI.ViewModels;
 using RecipeStudioUI.Tests.Helpers;
 using RecipeStudioUI.Tests.Mocks;
-using RecipeStudio.UI.ViewModels;
-using RecipeStudio.Repository.Presistence;
 
 namespace RecipesUI.Tests.ViewModelsTests
 {
@@ -69,21 +70,27 @@ namespace RecipesUI.Tests.ViewModelsTests
        
         public async Task RegisterCmd_Execute_Success()
         {
+            var context = TestHelper.GetDbContext();
+        
             var usrRepMock = new UserRepositoryMock();
-            var vm = new RegisterVM(usrRepMock,
-            new MessageServiceMock());
-            var sut = vm.RegisterCmd;
-            vm.Username = "Ali";
-            vm.Email = "test@yahoo.com";
-            vm.Password = "123";
-            Assert.IsTrue(sut.CanExecute(vm));
-            string pwd = TestContext.CurrentContext.Test.Name;            
-            sut.Execute(vm);
+            var name = TestContext.CurrentContext.Test.Name;
+            var vm = new RegisterVM(usrRepMock,     
+            new MessageServiceMock())
+            {
+                Username = "Ali",
+                Email = name +"@yahoo.com",
+                Password = "123",
+            };
+            var cmd = vm.RegisterCmd;
+            
+            Assert.IsTrue(cmd.CanExecute(vm));                     
+            cmd.Execute(vm);
+            await Task.Delay(200);
             Assert.IsTrue(usrRepMock.RegisteredUsers.Count == 1);
             var user = usrRepMock.RegisteredUsers[0];
             Assert.IsNotNull(user);
-            Assert.IsTrue(user.Email == vm.Email);
-            Assert.IsTrue(user.UserName == vm.Username);
+            Assert.IsTrue(user.Email == name.ToLowerInvariant()+ "@yahoo.com");
+            Assert.That(user.UserName,Is.EqualTo("ali"));
         }
 
     }

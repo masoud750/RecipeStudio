@@ -41,11 +41,11 @@ namespace RecipeStudio.UI.ViewModels
  
         private readonly IRepository<RecipeDM> _repository;
         private readonly IMessageService _msgService;
-        public TableColumnsVM ColumnsVM
+        public TableCollectionVM CollectionVM
         {
             get;
         }
-        private readonly TableColumnsVM? _columnsVM;
+        private readonly TableCollectionVM? _collectionVM;
 
       
 
@@ -143,10 +143,7 @@ namespace RecipeStudio.UI.ViewModels
 
                     _msgService.ShowMessage("Recipe updated successfully.",
                      Helpers.MessageType.Info, "Info");
-
-                }
-
-                
+                }                
             }
             catch (Exception ex)
             {
@@ -172,12 +169,6 @@ namespace RecipeStudio.UI.ViewModels
                       Helpers.MessageType.Error, "Delete Data");
             }
         }
-
-
-
-
-  
-
 
         public void FakeDeleteAsync()
         {
@@ -382,7 +373,5 @@ namespace RecipeStudio.UI.ViewModels
                
             }
         }
-
-       
     }
 }

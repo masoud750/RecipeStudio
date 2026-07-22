@@ -52,8 +52,7 @@ namespace RecipeStudio.UI.ViewModels
 
             }
 
-            _column = column;
-           
+            _column = column;           
         }
 
         private void HandlePropertyChnaged(object? sender, PropertyChangedEventArgs e)
@@ -62,7 +61,7 @@ namespace RecipeStudio.UI.ViewModels
             {
                 if (vm.IsSelected)
                 {
-                    if(SelectedItems.Any( x => x.Name == vm.Name) == false)
+                    if (SelectedItems.Any(x => x.Name == vm.Name) == false)
                     {
                         SelectedItems.Add((T)vm);
                     }
@@ -114,10 +113,5 @@ namespace RecipeStudio.UI.ViewModels
         }
 
         public IngredientDM IngredientDM { get;  }
-
-      
-
-    
-
     }
 }
